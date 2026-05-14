@@ -23,7 +23,7 @@ jobs:
       should_build: ${{ steps.check_build.outputs.should_build }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v6.0.2
         with:
           fetch-depth: 0
 
@@ -68,7 +68,7 @@ jobs:
       options: --user root
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v6.0.2
 
       - name: Install dependencies
         run: |
@@ -126,7 +126,7 @@ jobs:
           ls -lah artifacts/
 
       - name: Upload artifacts to workflow
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v7.0.1
         with:
           name: bootloader-${{ needs.check-latest-uboot.outputs.tag }}
           path: artifacts/
